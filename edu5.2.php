@@ -57,7 +57,7 @@
 <body>
 <div class="box">
 
-    <h2>ingresso</h2>
+    <h2>Salario</h2>
 
     <form method="post">
         <label>Digite seu salário:</label>
@@ -72,15 +72,55 @@
     IF($_POST) {
 
         $salario = $_POST['salario'];
-        $aumentosalario = $salario*0.80;
+
+            $percentual5 = "5%";
+            $percentual10 = "10%";
+            $percentual15 = "15%";
+            $percentual20 = "20%";
 
         if($salario<=280)
-       {
-        
+       { $salariofinal = $salario*1.20;
+        $aumento = $salariofinal - $salario;
+        echo"Salario antigo: ".$salario."<br>"; 
+        echo"Salario novo: ".$salariofinal. "<br>";
+        echo"Aumento: ".$aumento. "<br>";
+        echo"Percentual: ".$percentual20. "<br>";
        }
 
+          elseif($salario>280 && $salario<=700)
+       { $salariofinal = $salario*1.15;
+        $aumento = $salariofinal - $salario;
+        echo"Salario antigo: ".$salario."<br>"; 
+        echo"Salario novo: ".$salariofinal. "<br>";
+        echo"Aumento: ".$aumento. "<br>";
+        echo"Percentual: ".$percentual15. "<br>";
 
-        }
+
+        
+       }
+           elseif($salario>700 && $salario<=1500)
+       { $salariofinal = $salario*1.10;
+        $aumento = $salariofinal - $salario;
+        echo"Salario antigo: ".$salario."<br>"; 
+        echo"Salario novo: ".$salariofinal. "<br>";
+        echo"Aumento: ".$aumento. "<br>";
+        echo"Percentual: ".$percentual10. "<br>";
+       }
+
+            elseif($salario>1500)
+       { $salariofinal = $salario*1.05;
+        $aumento = $salariofinal - $salario;
+        echo"Salario antigo: ".$salario."<br>"; 
+        echo"Salario novo: ".$salariofinal."<br>";
+        echo"Aumento: ".$aumento. "<br>";
+        echo"Percentual: ".$percentual5."<br>";
+
+       }
+       }
+       
+
+
+       
 
 
 
