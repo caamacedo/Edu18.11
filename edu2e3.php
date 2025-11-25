@@ -75,6 +75,9 @@
         <label>Lado 5 (cm):</label>
         <input type="number" step="0.01" name="l5">
 
+        <label>Lado 6 (cm):</label>
+        <input type="number" step="0.01" name="16">
+
         <button type="submit">Calcular</button>
     </form>
 
@@ -87,7 +90,8 @@
             $_POST['l2'] ?? null,
             $_POST['l3'] ?? null,
             $_POST['l4'] ?? null,
-            $_POST['l5'] ?? null
+            $_POST['l5'] ?? null,
+            $_POST['l6'] ?? null,
         ]);
 
         $quant = count($lados);
@@ -136,12 +140,23 @@
                 $area = $lado * $lado;
 
                  echo "<strong>Área:</strong> " . number_format($area, 2) . " cm²";
+        // } else {
+        //     echo "Preencha exatamente 5 lados.";     
+        // }
+
+        } elseif ($quant == 6) {
+            echo "<strong>Figura:</strong> NÃO É UM POLÍGONO<br>";
+            echo "Polígono não identificado.";
+
+                $lado = reset($lados);
+                $area = $lado * $lado;
+
+                 echo "<strong>Área:</strong> " . number_format($area, 2) . " cm²";
         } else {
-            echo "Preencha exatamente 5 lados.";
-        }
+            echo "Polígono não identificado.";
 
         echo "</div>";
-    }
+    }}
     ?>
 
 </div>
